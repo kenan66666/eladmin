@@ -32,10 +32,21 @@
             </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>me.zhengjie</groupId>
+            <artifactId>eladmin-knowledge</artifactId>
+            <version>2.5</version>
+        </dependency>
+
         <!-- tools 模块包含了 common 和 logging 模块 -->
         <dependency>
             <groupId>me.zhengjie</groupId>
             <artifactId>eladmin-tools</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>me.zhengjie</groupId>
+            <artifactId>eladmin-knowledge</artifactId>
             <version>2.5</version>
         </dependency>
 
