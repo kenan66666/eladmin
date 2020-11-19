@@ -22,6 +22,8 @@ public class LessonLearnDto extends BaseEntity implements Serializable {
     private Long pid;
     private Integer subCount;
     private String name;
+    private String sysId;
+    private String sysName;
     private Integer knowsSort;
     private String docDir;
     private boolean enabled;

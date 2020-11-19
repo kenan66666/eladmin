@@ -34,6 +34,12 @@ public class LessonLearn extends BaseEntity implements Serializable {
     @ApiModelProperty(value = "名称")
     private String name;
 
+    @ApiModelProperty(value = "系统编号")
+    private String sysId;
+
+    @ApiModelProperty(value = "系统名称")
+    private String sysName;
+
     @ApiModelProperty(value = "文档路径")
     private String docDir;
 

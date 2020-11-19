@@ -92,6 +92,7 @@ public class BussLogicServiceImpl implements BussLogicService {
 
     @Override
     public List<BussLogicDto> getSuperior(BussLogicDto bussLogicDto, List<BussLogic> bussLogics) {
+        // 当循环到最顶层，已经没有父级的时候，在bussLogics里边，已经保存了所有的bussLogics对象，然后做一次Dto的Mapper，就成功了。
         if(bussLogicDto.getPid() == null){
             bussLogics.addAll(bussLogicRepository.findByPidIsNull());
             return bussLogicMapper.toDto(bussLogics);

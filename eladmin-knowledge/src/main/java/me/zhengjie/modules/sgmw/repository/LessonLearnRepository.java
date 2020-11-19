@@ -1,6 +1,5 @@
 package me.zhengjie.modules.sgmw.repository;
 
-import me.zhengjie.modules.sgmw.domain.BussLogic;
 import me.zhengjie.modules.sgmw.domain.LessonLearn;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -10,9 +9,9 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface LessonLearnRepository extends JpaRepository<LessonLearn,Long>, JpaSpecificationExecutor<LessonLearn> {
-    List<BussLogic> findByPid(Long ID);
+    List<LessonLearn> findByPid(Long ID);
 
-    List<BussLogic> findByPidIsNull();
+    List<LessonLearn> findByPidIsNull();
 
     int countByPid(Long ID);
 

@@ -9,9 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>eladmin-knowledge</artifactId>
-    <name>知识体系门类模块</name>
-
+    <artifactId>eladmin-overview</artifactId>
+    <name>系统概况</name>
 
     <dependencies>
         <!-- tools 模块包含了 common 和 logging 模块 -->
@@ -23,5 +22,6 @@
         </dependency>
 
     </dependencies>
+
 
 </project>
