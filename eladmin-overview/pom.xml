@@ -20,6 +20,12 @@
             <version>2.5</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>me.zhengjie</groupId>
+            <artifactId>eladmin-knowledge</artifactId>
+            <version>2.5</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 

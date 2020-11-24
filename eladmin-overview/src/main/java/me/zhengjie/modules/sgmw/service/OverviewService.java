@@ -1,15 +1,17 @@
 package me.zhengjie.modules.sgmw.service;
 
+import me.zhengjie.modules.sgmw.service.dto.AreaSystemDto;
 import me.zhengjie.modules.sgmw.service.dto.OverviewDto;
+import me.zhengjie.modules.sgmw.service.dto.OverviewMainDto;
 
 import java.util.List;
 
 public interface OverviewService {
 
-    OverviewDto findById(Long id);
-    OverviewDto findBySysId(String sysId);
-    OverviewDto findBySysName(String sysName);
-    List<OverviewDto> findByChangeId(String changeId);
-    void create(OverviewDto resources);
-    void update(OverviewDto resources);
+    AreaSystemDto findById(Long id);
+    AreaSystemDto findBySysId(String sysId);
+    AreaSystemDto findBySysName(String sysName);
+    List<AreaSystemDto> findByChangeId(String changeId);
+    void create(OverviewMainDto resources);
+    void update(OverviewMainDto resources);
 }
