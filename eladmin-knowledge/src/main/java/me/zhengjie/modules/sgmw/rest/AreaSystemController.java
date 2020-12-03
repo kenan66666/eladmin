@@ -55,6 +55,14 @@ public class AreaSystemController {
 
     @Log
     @ApiOperation("模糊查询系统名称与系统编号")
+    @GetMapping("/findbysysid")
+    @PreAuthorize("@el.check('user:list','knowledge:list')")
+    public ResponseEntity<Object> getSystemNameArea(String sysId){
+        return new ResponseEntity<>(areaSystemService.findBySysId(sysId), HttpStatus.OK);
+    }
+
+    @Log
+    @ApiOperation("模糊查询系统名称与系统编号")
     @GetMapping("/systemall")
     @PreAuthorize("@el.check('user:list','knowledge:list')")
     public ResponseEntity<Object> getSystemAll(){

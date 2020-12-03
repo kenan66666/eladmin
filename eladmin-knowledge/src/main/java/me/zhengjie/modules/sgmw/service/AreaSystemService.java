@@ -16,6 +16,8 @@ public interface AreaSystemService {
 
     List<AreaSystem> findAll();
 
+    AreaSystem findBySysId(String sysId);
+
     void create(AreaSystem resources);
 
     void update(AreaSystem resources);

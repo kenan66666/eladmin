@@ -7,6 +7,7 @@ import me.zhengjie.base.BaseEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -18,7 +19,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @Table(name="overview_main")
-public class OverviewMain {
+public class OverviewMain extends BaseEntity implements Serializable {
     @Id
     @Column(name="id")
     @NotNull(groups = BaseEntity.Update.class)

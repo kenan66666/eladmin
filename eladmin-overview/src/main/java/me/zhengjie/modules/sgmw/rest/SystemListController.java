@@ -21,15 +21,15 @@ import java.util.List;
 
 /**
  * @auther: wukenan
- * @date: 2020/11/18
+ * @date: 2020/11/25
  * @description:
  */
+
 @RestController
 @RequiredArgsConstructor
 @Api(tags = "Overview：系统概况")
 @RequestMapping("/api/overview")
-public class OverviewController {
-
+public class SystemListController {
     @Autowired
     private final AreaSystemService areaSystemService;
     private static final String ENTITY_NAME = "AreaSystem";
@@ -50,5 +50,4 @@ public class OverviewController {
         List<AreaSystemDto> areaSystemDtos = areaSystemService.queryAll(criteria, true);
         return new ResponseEntity<>(PageUtil.toPage(areaSystemDtos, areaSystemDtos.size()), HttpStatus.OK);
     }
-
 }

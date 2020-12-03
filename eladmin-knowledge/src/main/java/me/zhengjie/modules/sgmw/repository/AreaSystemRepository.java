@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface AreaSystemRepository extends JpaRepository<AreaSystem,Long>, JpaSpecificationExecutor<AreaSystem> {
     List<AreaSystem> findBySysNameLike(String sysName);
+    AreaSystem findBySysId(String sysId);
 }

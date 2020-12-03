@@ -37,7 +37,8 @@ public class AreaSystemServiceImpl implements AreaSystemService {
 
     @Override
     public List<AreaSystemDto> queryAll(AreaSystemQueryCriteria criteria, Boolean isQuery) throws Exception {
-        return areaSystemMapper.toDto(areaSystemRepository.findAll((root, criteriaQuery, criteriaBuilder) -> QueryHelp.getPredicate(root, criteria, criteriaBuilder)));
+        Sort sort = new Sort(Sort.Direction.DESC,"id");
+        return areaSystemMapper.toDto(areaSystemRepository.findAll((root, criteriaQuery, criteriaBuilder) -> QueryHelp.getPredicate(root, criteria, criteriaBuilder),sort));
     }
 
     @Override
@@ -50,6 +51,12 @@ public class AreaSystemServiceImpl implements AreaSystemService {
     public List<AreaSystem> findAll() {
         List<AreaSystem> areaSystems = areaSystemRepository.findAll();
         return areaSystems;
+    }
+
+    @Override
+    public AreaSystem findBySysId(String sysId) {
+        AreaSystem areaSystem = areaSystemRepository.findBySysId(sysId);
+        return areaSystem;
     }
 
     @Override
