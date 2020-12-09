@@ -86,9 +86,12 @@ public class AuthorizationController {
         if (StringUtils.isBlank(authUser.getCode()) || !authUser.getCode().equalsIgnoreCase(code)) {
             throw new BadRequestException("验证码错误");
         }
+        // Spring Security 将获取到的用户名和密码封装成一个实现了 Authentication 接口的 UsernamePasswordAuthenticationToken类中
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(authUser.getUsername(), password);
+        // 将上述产生的 token 对象传递给 AuthenticationManager 进行登录认证。AuthenticationManager 认证成功后将会返回一个封装了用户权限等信息的 Authentication 对象。
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
+        // 通过调用 SecurityContextHolder.getContext().setAuthentication(...) 将 AuthenticationManager 返回的 Authentication 对象赋予给当前的 SecurityContext。
         SecurityContextHolder.getContext().setAuthentication(authentication);
         // 生成令牌
         String token = tokenProvider.createToken(authentication);
